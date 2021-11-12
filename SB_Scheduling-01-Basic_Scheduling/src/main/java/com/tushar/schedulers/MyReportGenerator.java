@@ -10,7 +10,7 @@ public class MyReportGenerator {
 
 	@Scheduled(initialDelay = 5*1000, fixedDelay = 5*1000)//1000=1sec
 	private void generateCustomerReport() {
-		System.out.println("Customer Report  Generation starts : "+new Date());
+		System.out.println(Thread.currentThread().getName()+"-"+Thread.currentThread().hashCode()+"-Customer Report  Generation starts : "+new Date());
 	}
 	
 	/*
@@ -24,7 +24,7 @@ public class MyReportGenerator {
 	*/
 	@Scheduled(cron="1 27 20 * * *")
 	private void generateSOAReport() {
-		System.out.println("SOA Report  Generation starts : "+new Date());
+		System.out.println(Thread.currentThread().getName()+"-"+Thread.currentThread().hashCode()+"-SOA Report  Generation starts : "+new Date());
 	}
 	
 }
